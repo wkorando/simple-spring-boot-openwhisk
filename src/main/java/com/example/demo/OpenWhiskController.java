@@ -26,12 +26,12 @@ public class OpenWhiskController {
     }
 
     @PostMapping(value = "/run", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<Object, Object>> run(@RequestBody Map<Object, Object> args) {
+    public Map<Object, Object> run(@RequestBody Map<Object, Object> args) {
     	System.out.println("In run");
     	System.out.println(args.toString());
     	Map<Object, Object> response = new   HashMap<>();
         String result = "Hello! Welcome to OpenWhisk...";
         response.put("message", result);
-        return ResponseEntity.ok().body(response);
+        return response;
     }
 }
