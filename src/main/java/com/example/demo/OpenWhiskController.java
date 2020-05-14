@@ -12,9 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api")
 public class OpenWhiskController {
+	
     @RequestMapping(value = "/init", method = RequestMethod.POST)
-
     public ResponseEntity<Map> init(@RequestBody Map params) {
 
         HashMap<String, Object> map = new HashMap<>();
