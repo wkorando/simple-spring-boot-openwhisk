@@ -30,6 +30,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.gigaspaces</groupId>
 			<artifactId>xap-openspaces</artifactId>
 			<version>15.2.0</version>
@@ -37,6 +41,10 @@
 				<exclusion>
 					<groupId>com.atomikos</groupId>
 					<artifactId>transactions-jta</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>*</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
