@@ -18,7 +18,12 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
+	<repositories>
+		<repository>
+			<id>org.openspaces</id>
+			<url>http://maven-repository.openspaces.org</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
