@@ -10,7 +10,3 @@ packages:
         inputs: 
           bucket: aa-cos-test
           lifecycleEvent: CREATE
-    rules:
-      processCosFile:
-        trigger: cosAdd
-        action: /BillyDeveloperAdvocado@gmail.com_dev/aa-function-tuned
