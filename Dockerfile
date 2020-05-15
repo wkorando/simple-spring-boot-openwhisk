@@ -1,15 +1,9 @@
-#FROM adoptopenjdk/openjdk8-openj9
-FROM openwhisk/java8action
+FROM adoptopenjdk/openjdk8-openj9:alpine-jre
 
-ADD target/demo.jar /app/
-#ADD script.sh /app/
-#ADD start-spring.sh /app/
-#ADD openwhisk-web-action-http-proxy /app/
+ADD target/aa-serverless-function.jar /app/
+RUN /bin/sh -c 'java -Xshareclasses:cacheDir=/app/cache -Xscmx128m -jar app/aa-serverless-function.jar &' ; sleep 20
 
-#ENV PROXY_PORT 8081
-#ENV PROXY_ALIVE_DELAY 7000
-#ENV APP_SERVER_CMD /app/start-spring.sh
 EXPOSE 8080
 
 WORKDIR /app
-ENTRYPOINT ["java", "-jar", "demo.jar" ]
+ENTRYPOINT ["java", "-jar", "-Xquickstart", "-noverify", "-Xshareclasses:cacheDir=/app/cache,readOnly", "aa-serverless-function.jar" ]

@@ -1,0 +1,16 @@
+# wskdeploy manifest file
+
+packages:
+  default:
+    version: 1.0
+    license: Apache-2.0 
+    triggers:
+      cosAdd:
+        feed: /BillyDeveloperAdvocado@gmail.com_dev/aa-serverless-function/cos/changes
+        inputs: 
+          bucket: aa-cos-test
+          lifecycleEvent: CREATE
+    rules:
+      processCosFile:
+        trigger: cosAdd
+        action: /BillyDeveloperAdvocado@gmail.com_dev/aa-function-tuned
